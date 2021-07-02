@@ -1,6 +1,6 @@
 {
-  "name": "@block65/imgproxy",
-  "version": "1.0.2",
+  "name": "@minho-comcom-ai/imgproxy",
+  "version": "1.0.2-insecure",
   "description": "NodeJS pure ESM client library to generate imgproxy urls",
   "keywords": [
     "imgproxy",
@@ -8,18 +8,22 @@
     "generation",
     "client"
   ],
-  "homepage": "https://github.com/block65/imgproxy-node#readme",
+  "homepage": "https://github.com/minho-comcom-ai/imgproxy-node#readme",
   "bugs": {
-    "url": "https://github.com/block65/imgproxy-node/issues"
+    "url": "https://github.com/minho-comcom-ai/imgproxy-node/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/block65/imgproxy-node.git"
+    "url": "git+https://github.com/minho-comcom-ai/imgproxy-node.git"
   },
   "license": "MIT",
   "author": "Koen Punt <koen@unitedwardrobe.com>",
   "type": "module",
-  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "files": [
     "dist"
   ],

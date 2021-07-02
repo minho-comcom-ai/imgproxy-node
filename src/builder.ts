@@ -1,4 +1,4 @@
-import { URL } from 'url';
+// import { URL } from 'url';
 import type {
   FocusPoint,
   Gravity,
@@ -9,7 +9,7 @@ import type {
   WatermarkOffset,
   WatermarkPosition,
 } from './types.js';
-import { isFocusPoint, isRGBColor, isSecureConfig, sign } from './utils.js';
+import { isFocusPoint, isRGBColor,  /* isSecureConfig, sign */ } from './utils.js';
 
 export class ImgproxyBuilder {
   private readonly config: ImgproxyConfig;
@@ -153,13 +153,17 @@ export class ImgproxyBuilder {
     uri = `/${options ? `${options}/` : ''}${uri}`;
 
     // eslint-disable-next-line no-nested-ternary
-    const signature = isSecureConfig(config)
-      ? sign(config.key, config.salt, uri, config.signatureSize || 32)
-      : typeof config.insecure === 'string'
-      ? config.insecure
-      : 'insecure';
+    // const signature = isSecureConfig(config)
+    //   ? sign(config.key, config.salt, uri, config.signatureSize || 32)
+    //   : typeof config.insecure === 'string'
+    //   ? config.insecure
+    //   : 'insecure';
 
-    return new URL(`${signature}${uri}`, config.baseUrl);
+    const signature =
+      typeof config.insecure === 'string' ? config.insecure : 'insecure';
+
+    // return new URL(`${signature}${uri}`, config.baseUrl);
+    return `${config.baseUrl}/${signature}${uri}`;
   }
 
   private serializeOptions() {

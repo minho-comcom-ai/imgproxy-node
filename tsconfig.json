@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "sourceMap": true,
     "strict": true,
     "declaration": true,
@@ -8,7 +9,8 @@
       "es2020"
     ],
     "outDir": "./dist",
-    "module": "es2020"
+    "target": "ES2015",
+    "module": "ES2020"
   },
   "exclude": [
     "dist"
