@@ -1,6 +1,6 @@
 {
   "name": "@minho-comcom-ai/imgproxy",
-  "version": "1.0.2-insecure",
+  "version": "1.0.2-insecure-gravity-point",
   "description": "NodeJS pure ESM client library to generate imgproxy urls",
   "keywords": [
     "imgproxy",

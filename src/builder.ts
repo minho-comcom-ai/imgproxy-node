@@ -64,10 +64,10 @@ export class ImgproxyBuilder {
   }
 
   public gravity(gravity: Gravity | FocusPoint | GravityPoint) {
-    if (isFocusPoint(gravity)) {
-      this.setOption('g', `fp:${gravity.x}:${gravity.y}`);
-    } else if (isGravityPoint(gravity)) {
+    if (isGravityPoint(gravity)) {
       this.setOption('g', `${gravity.gravity}:${gravity.x}:${gravity.y}`);
+    } else if (isFocusPoint(gravity)) {
+      this.setOption('g', `fp:${gravity.x}:${gravity.y}`);
     } else {
       this.setOption('g', gravity);
     }
