@@ -2,6 +2,7 @@
 import type {
   FocusPoint,
   Gravity,
+  GravityPoint,
   HexColor,
   ImgproxyConfig,
   ResizingType,
@@ -9,7 +10,7 @@ import type {
   WatermarkOffset,
   WatermarkPosition,
 } from './types.js';
-import { isFocusPoint, isRGBColor,  /* isSecureConfig, sign */ } from './utils.js';
+import { isFocusPoint, isRGBColor, isGravityPoint, /* isSecureConfig, sign */ } from './utils.js';
 
 export class ImgproxyBuilder {
   private readonly config: ImgproxyConfig;
@@ -62,9 +63,11 @@ export class ImgproxyBuilder {
     return this;
   }
 
-  public gravity(gravity: Gravity | FocusPoint) {
+  public gravity(gravity: Gravity | FocusPoint | GravityPoint) {
     if (isFocusPoint(gravity)) {
       this.setOption('g', `fp:${gravity.x}:${gravity.y}`);
+    } else if (isGravityPoint(gravity)) {
+      this.setOption('g', `${gravity.gravity}:${gravity.x}:${gravity.y}`);
     } else {
       this.setOption('g', gravity);
     }

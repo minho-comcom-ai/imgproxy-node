@@ -1,6 +1,7 @@
 // import { createHmac } from 'crypto';
 import {
   FocusPoint,
+  GravityPoint,
   // ImgproxyConfig,
   // ImgproxySecureConfig,
   RGBColor,
@@ -18,6 +19,10 @@ export const isRGBColor = (obj: RGBColor | unknown): obj is RGBColor => {
 
 export const isFocusPoint = (obj: FocusPoint | unknown): obj is FocusPoint => {
   return typeof obj === 'object' && obj !== null && 'x' in obj && 'y' in obj;
+};
+
+export const isGravityPoint = (obj: GravityPoint | unknown): obj is GravityPoint => {
+  return typeof obj === 'object' && obj !== null && 'x' in obj && 'y' in obj && 'gravity' in obj;
 };
 
 // export const isSecureConfig = (

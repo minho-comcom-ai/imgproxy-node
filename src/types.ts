@@ -66,6 +66,12 @@ export enum Gravity {
   smart = 'sm', // libvips detects the most "interesting" section of the image and considers it as the center of the resulting image;
 }
 
+export interface GravityPoint {
+  gravity: Gravity;
+  x: number;
+  y: number;
+}
+
 export enum WatermarkPosition {
   center = 'ce', // default
   north = 'no', // (top edge);
